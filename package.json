@@ -1,0 +1,48 @@
+{
+  "name": "warzone",
+  "version": "0.1.0",
+  "description": "Desktop client for accessing ozfortress.com",
+  "main": "main.js",
+  "scripts": {
+    "dist": "build",
+    "start": "electron ."
+  },
+  "author": "GitHub",
+  "license": "MIT",
+  "build": {
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "iconUrl": "build/icon.ico",
+      "title": "warzone",
+      "noMsi": "false",
+      "version": "0.1.0",
+      "publisher": "core"
+    },
+    "win": {
+      "target": "squirrel",
+      "iconUrl": "build/icon.ico",
+      "title": "warzone",
+      "noMsi": "false",
+      "version": "0.1.0",
+      "publisher": "core"
+    }
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "electron-packager": "^14.2.1"
+  },
+  "dependencies": {
+    "css-loader": "^3.4.2",
+    "electron": "^8.2.0",
+    "electron-compile": "^6.4.4",
+    "electron-context-menu": "^0.16.0",
+    "electron-titlebar-windows": "^3.0.0",
+    "file-system": "^2.2.2",
+    "webpack": "^4.42.1"
+  }
+}

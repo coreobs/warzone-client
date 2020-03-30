@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Loading warzone...</title>
+  <style>
+    * {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .LoaderWrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        
+        box-sizing: border-box;
+        background-color: white;
+        
+        border-radius: 0.3rem;
+    }
+      
+    .LoaderContent {
+        color: white;
+    }
+      
+    #LoaderJokeLoader {
+        margin: 20px;
+        width: 400px;
+        height: 8px;
+    }
+      
+    .slideshow-container {
+        max-width: 100%;
+        position: relative;
+        margin: auto;
+    }
+      
+    .text {
+        color: black;
+        font-size: 22px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+    }
+      
+    .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #333;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+      
+    .active {
+        background-color: #129dab;
+    }
+      
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+      
+    @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+      
+    @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="LoaderWrapper">
+    <div class="LoaderContent">
+      <div class="LoaderLogo">
+        <img src="../../assets/ozf-logo.svg" />
+        <div id="LoaderJokeLoader"></div>
+        <br>
+        <br>
+        <br>
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="LoaderJokeSlider">
+          <div class="slideshow-container">
+            <div class="mySlides fade">
+              <div class="text">Oh you thought this was an AntiCheat? ( ͡° ͜ʖ ͡°) </div>
+            </div>
+            <div class="mySlides fade">
+              <div class="text">Getting your IP to sell...</div>
+            </div>
+            <div class="mySlides fade">
+              <div class="text">Using your hardware to mine Bitcoin...</div>
+            </div>
+            <div class="mySlides fade">
+              <div class="text">Stealing your TF2 items...</div>
+            </div>
+            <div class="mySlides fade">
+              <div class="text">Oooh a credit card number? Thank you! :D</div>
+            </div>
+            <div class="mySlides fade">
+              <div class="text">Done. Thank you for your contribution to ozfortress!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../../assets/js/loading-progress.js"></script>
+  <script>
+    var slideIndex = 0;
+    showSlides();
+    
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}    
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 6000);
+    }
+  </script>
+  <script>
+    require('./renderer.js')
+  </script>
+</body>
+
+</html>
